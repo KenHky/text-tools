@@ -42,9 +42,15 @@ export function activate(context: vscode.ExtensionContext) {
                         const defaultTexts = editor.document.getText(range);
                         let newText = "";
                         defaultTexts.split('\n').map(text => {
-                            const oldText = text;
+                            let oldText = text;
+                            const spaceList = oldText.match(/(^\s+)|([^\s].+)/g);
+                            let spaceText = '';
+                            if (spaceList && spaceList.length > 1) {
+                                spaceText = spaceList[0];
+                                oldText = spaceList[1];
+                            }
                             text = getStringArray(text).join('_');
-                            text = text.toUpperCase() + ': "' + oldText + '",';
+                            text = spaceText + text.toUpperCase() + ': "' + oldText + '",';
                             newText += (text + '\n');
                         });
                         vscode.window.showInformationMessage(newText);
