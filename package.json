@@ -2,7 +2,7 @@
   "name": "text-tools",
 	"displayName": "text-tools",
 	"description": "This is a tool library for solving strange text problems",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.59.1"
 	},
@@ -20,16 +20,16 @@
 				"command": "extension.constantInObject",
 				"title": "对象中的常量constantInObject"
 			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.constantInObject",
+				"key": "ctrl+alt+u",
+				"mac": "cmd+alt+u",
+				"when": "editorTextFocus"
+			}
 		]
 	},
-	"keybindings": [
-		{
-			"command": "extension.constantInObject",
-			"key": "ctrl+alt+u",
-			"mac": "cmd+alt+u",
-			"when": "editorTextFocus"
-		}
-	],
 	"scripts": {
 		"vscode:prepublish": "yarn run package",
 		"compile": "webpack",
@@ -56,5 +56,10 @@
 		"ts-loader": "^9.2.2",
 		"webpack": "^5.38.1",
 		"webpack-cli": "^4.7.0"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/KenHky/text-tools"
+	},
+	"homepage": "https://github.com/KenHky/text-tools/blob/master/README.md"
 }
