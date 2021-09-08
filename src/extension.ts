@@ -39,11 +39,16 @@ export function activate(context: vscode.ExtensionContext) {
 
                     if (!selection.isEmpty) {
                         const range = new vscode.Range(selection.start, selection.end);
-                        const defaultText = editor.document.getText(range);
-                        let text = defaultText;
-                        text = getStringArray(text).join('_');
-                        text = text.toUpperCase() + ': "' + defaultText + '",';
-                        edit.replace(range, text);
+                        const defaultTexts = editor.document.getText(range);
+                        let newText = "";
+                        defaultTexts.split('\n').map(text => {
+                            const oldText = text;
+                            text = getStringArray(text).join('_');
+                            text = text.toUpperCase() + ': "' + oldText + '",';
+                            newText += (text + '\n');
+                        });
+                        vscode.window.showInformationMessage(newText);
+                        edit.replace(range, newText);
                     }
                 }
             });

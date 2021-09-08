@@ -1,6 +1,6 @@
 # text-tools README
 
-This is a tool library for solving strange text problems
+This is a vscode tool library for solving strange text problems
 
 ## Features
 

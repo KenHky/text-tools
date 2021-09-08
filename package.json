@@ -2,13 +2,14 @@
   "name": "text-tools",
 	"displayName": "text-tools",
 	"description": "This is a tool library for solving strange text problems",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.59.1"
 	},
 	"categories": [
 		"Other"
 	],
+	"icon": "text-tools.png",
 	"publisher": "kenhky",
 	"activationEvents": [
     "onCommand:extension.constantInObject"
@@ -59,7 +60,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/KenHky/text-tools"
+		"url": "https://github.com/KenHky/text-tools/"
 	},
-	"homepage": "https://github.com/KenHky/text-tools/blob/master/README.md"
+	"bugs": "https://github.com/KenHky/text-tools/issues",
+	"links": {
+    "getstarted": {
+      "uri": "https://github.com/KenHky/text-tools/blob/master/README.md"
+    },
+    "support": {
+      "uri": "https://github.com/KenHky/text-tools/issues"
+    }
+  }
 }
