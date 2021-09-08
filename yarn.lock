@@ -137,7 +137,7 @@
   resolved "http://192.168.101.207:8081/repository/npm-group/@types/node/-/node-14.17.14.tgz#6fda9785b41570eb628bac27be4b602769a3f938"
   integrity sha512-rsAj2u8Xkqfc332iXV12SqIsjVi07H479bOP4q94NAcjzmAvapumEhuVIt53koEf7JFrpjgNKjBga5Pnn/GL8A==
 
-"@types/vscode@^1.60.0":
+"@types/vscode@^1.59.1":
   version "1.60.0"
   resolved "http://192.168.101.207:8081/repository/npm-group/@types/vscode/-/vscode-1.60.0.tgz#9330c317691b4f53441a18b598768faeeb71618a"
   integrity sha512-wZt3VTmzYrgZ0l/3QmEbCq4KAJ71K3/hmMQ/nfpv84oH8e81KKwPEoQ5v8dNCxfHFVJ1JabHKmCvqdYOoVm1Ow==
