@@ -25,6 +25,13 @@ export function activate(context: vscode.ExtensionContext) {
 
         return str;
     };
+    const isChinese = function (temp:string) {
+        const re = new RegExp("[\\u4E00-\\u9FFF]+","g");
+        if (re.test(temp)) {
+            return true;
+        };
+        return false;
+    };
     const constantInObject = vscode.commands.registerCommand("extension.constantInObject", function () {
         const editor = vscode.window.activeTextEditor;
         if (editor) {
@@ -49,11 +56,17 @@ export function activate(context: vscode.ExtensionContext) {
                                 spaceText = spaceList[0];
                                 oldText = spaceList[1];
                             }
-                            text = getStringArray(text).join('_');
-                            text = spaceText + text.toUpperCase() + ': "' + oldText + '",';
+                            let annotate = "";
+                            const textList = oldText.split(' ');
+                            if (textList.length > 1 && isChinese(textList[0])) {
+                                annotate += (" // " + textList[0]);
+                                textList.shift();
+                                oldText = textList.join('');
+                            }
+                            text = getStringArray(oldText).join('_');
+                            text = spaceText + text.toUpperCase() + ': "' + oldText + '",' + annotate;
                             newText += (text + '\n');
                         });
-                        vscode.window.showInformationMessage(newText);
                         edit.replace(range, newText);
                     }
                 }
